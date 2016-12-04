@@ -1,4 +1,4 @@
-= Eclipse
+= Eclipse設定
 :toc:
 :toc-title:
 :pagenums:

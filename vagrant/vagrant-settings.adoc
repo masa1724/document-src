@@ -1,0 +1,98 @@
+= Vagrant設定
+:toc:
+:toc-title:
+:pagenums:
+// :sectnums:
+:imagesdir: img_MySQL/
+:icons: font
+:source-highlighter: pygments
+:pygments-style: default
+// $(dirname $(gem which pygments.rb))/../vendor/pygments-main/pygmentize -L styles
+:pygments-linenums-mode: inline
+:lang: ja
+
+
+=== インストール
+---
+[source,sh]
+----
+# Download Link
+**virtualbox**
+https://www.virtualbox.org/
+**vagrant**
+https://www.vagrantup.com/downloads.html
+**その他boxはここ見る**
+http://www.vagrantbox.es/
+----
+
+=== 追加から起動まで
+---
+[source,sh]
+----
+# box追加(Cent7.0)
+vagrant box add centos7.0 https://github.com/tommy-muehle/puppet-vagrant-boxes/releases/download/1.1.0/centos-7.0-x86_64.box
+
+# 追加されているbox表示
+vagrant box list
+
+# vagrantbox用のフォルダ作成
+mkdir %USERPROFILE%\vagrantbox
+mkdir %USERPROFILE%\vagrantbox\centos7.0
+
+cd %USERPROFILE%\vagrantbox\centos7.0
+
+# Vagrantfile作成
+vagrant init centos7.0
+
+# 起動(初回はuser,password共にvagrant)
+vagrant up
+
+# 停止
+vagrant halt
+----
+
+.%USERPROFILE%\vagrantbox\centos7.0\Vagrantfile
+[source,sh]
+----
+config.vm.network "private_network", ip: "192.168.33.10"
+config.vm.provider "virtualbox" do |vb|
+  vb.gui = true
+end
+----
+
+=== VagrantへSSH接続
+[source,sh]
+----
+# boxのフォルダへ移動
+cd ~/vagrantbox/centos7.0
+
+# ssh接続情報をconfigへ出力
+vagrant ssh-config --host hostname >> ~/.ssh/config
+
+# ssh時のホスト名をvagrantに置き換える
+sed -i -e "s/Host hostname/Host vagrant/g" ~/.ssh/config
+
+# 確認
+cat ~/.ssh/config
+
+:# 仮想マシンにログイン
+vagrant ssh
+----
+
+[width="80%",cols="s,m",frame="topbot",options="header"]
+|==========================
+|説明|コマンド
+|初期化|vagrant init
+|起動|vagrant up
+|再起動|vagrant reload
+|ステータス確認|vagrant status
+|停止|vagrant halt
+|破棄|vagrant destroy
+|作成|vagrant package
+|一時停止|vagrant suspend
+|再開|vagrant resume
+|==========================
+
+
+エラー時
+http://so-zou.jp/software/tool/system/program-install-and-uninstall-troubleshooter/

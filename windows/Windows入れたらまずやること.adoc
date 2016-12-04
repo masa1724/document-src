@@ -1,0 +1,108 @@
+= Windows入れたらやること
+:toc:
+:toc-title:
+:pagenums:
+:sectnums:
+:imagesdir: img_MySQL/
+:icons: font
+:source-highlighter: pygments
+:pygments-style: default
+// $(dirname $(gem which pygments.rb))/../vendor/pygments-main/pygmentize -L styles
+:pygments-linenums-mode: inline
+:lang: ja
+
+
+=== OneDrive削除
+---
+[source,sh]
+----
+taskkill /f /im OneDrive.exe
+%SystemRoot%\SysWOW64\OneDriveSetup.exe /uninstall
+rd "%UserProfile%\OneDrive" /Q /S
+rd "%LocalAppData%\Microsoft\OneDrive" /Q /S
+rd "%ProgramData%\Microsoft OneDrive" /Q /S
+REG Delete "HKEY_CLASSES_ROOT\CLSID\{018D5C66-4533-4307-9B53-224DE2ED1FE6}" /f
+REG Delete "HKEY_CLASSES_ROOT\Wow6432Node\CLSID\{018D5C66-4533-4307-9B53-224DE2ED1FE6}" /f
+----
+
+=== 環境変数の設定
+---
+[source,sh]
+----
+SETX GOOGLE_DRIVE "%USERPROFILE%\GoogleDrive"
+
+SETX DOTFILES "%GOOGLE_DRIVE%\dotfiles"
+
+SETX DOTFILES_WIN "%DOTFILES%\win"
+
+SETX MYSCRIPTS "%GOOGLE_DRIVE%\myscripts"
+
+rem SETX PATH "%PATH%;%MYSCRIPTS%"
+
+rem SETX /M JAVA_HOME "C:\Program Files\Java\jdk1.8.0_74"
+----
+
+=== batファイル右クリック>編集時のエディタを変更
+---
+[source,sh]
+----
+# Win + R  =>  regedit
+HKEY_CLASSES_ROOT > batfile > shell > edit > command
+
+# 変更前
+%SystemRoot%\System32\NOTEPAD.EXE %1
+# 変更後
+"C:\Program Files (x86)\sakura\sakura.exe" "%1"
+----
+
+=== ディレクトリ作成
+---
+[source,sh]
+----
+mkdir C:\opt
+mkdir C:\var
+mkdir C:\tmp
+
+mkdir C:\var\log
+mkdir C:\var\log\teraterm
+mkdir C:\var\log\vba
+mkdir C:\var\www
+
+mkdir %USERPROFILE%\.ssh
+mkdir %USERPROFILE%\work
+mkdir %USERPROFILE%\vagrantbox
+----
+
+=== インストールするもの
+---
+[source,sh]
+----
+/*** 必須 ***/
+GoogleChrome
+GoogleDrive
+Google日本語入力
+WinRAR
+LibreOffice
+VLC Media player
+
+SakuraEditor
+Sublimetext3
+
+/*** 開発環境 ***/
+VisualStudio
+PhpStorm
+Eclipse
+Eclipse(日本語パッケージ)
+JDK
+php
+MySQLODBC
+Teraterm
+ConEmu
+Vagrant
+VirtualBox
+Git for Windows
+
+/*** その他 ***/
+Skype
+IPMsg
+----

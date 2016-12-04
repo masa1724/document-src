@@ -11,33 +11,32 @@
 :pygments-linenums-mode: inline
 :lang: ja
 
-設定ファイル
-C:\Program Files (x86)\teraterm\TERATERM.INI
-
-=== インストール
+=== 設定ファイル
 ---
-[source,sh]
+
+[source,properties]
+.C:\Program Files (x86)\teraterm\TERATERM.INI
 ----
-# ログ等を開くエディタ
+; ログ等を開くエディタ
 ViewlogEditor=C:\Program Files\Sublime Text 3\subl.exe
 
-# 起動時の端末サイズ(x,y)
+; 起動時の端末サイズ(x,y)
 TerminalSize=120,35
 
-# 右クリック貼付を1発でやる
+; 右クリック貼付を1発でやる
 DisablePasteMouseRButton=off
 ConfirmPasteMouseRButton=off
 ConfirmChangePaste=off
 ConfirmChangePasteCR=off
 
-# 常に裏でログとっておく
+; 常に裏でログとっておく
 LogAutoStart=on
 LogHideDialog=on
 LogTimestamp=on
 LogDefaultName=teraterm_%Y%m%d%H%M%S.log
 LogDefaultPath=C:\var\log\teraterm
 
-# Teraterm起動時のホスト一覧を変えたい
+; Teraterm起動時のホスト一覧を変えたい
 iniファイルの [Hosts] 配下の値を追加 or 削除(コメントアウト)する
 例)
 [Hosts]

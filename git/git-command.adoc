@@ -9,7 +9,6 @@
 :pygments-linenums-mode: inline
 :lang: ja
 
-=== インストール
 [source,sh]
 ----
 # ブランチ名

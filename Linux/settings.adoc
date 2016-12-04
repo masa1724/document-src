@@ -45,14 +45,14 @@ rpm -ivh https://sourceforge.net/projects/postinstaller/files/fedora/releases/24
 https://github.com/masa1724/document/blob/master/Linux/cloud-storage.adoc
 
 # JDK
-https://github.com/masa1724/document/blob/master/java/JDK_settings.adoc
+https://github.com/masa1724/document/blob/master/java/JDK-settings.adoc
 
 # Eclipse
-https://github.com/masa1724/document/blob/master/Eclipse/Eclipse.adoc
+https://github.com/masa1724/document/blob/master/Eclipse/Eclipse-settings.adoc
 
 # git (Kororaはデフォルトでインストール済み v2.7.4）
-https://github.com/masa1724/document/blob/master/git/git.adoc
+https://github.com/masa1724/document/blob/master/git/git-settings.adoc
 
 # Ruby
-https://github.com/masa1724/document/blob/master/Ruby/ruby-setting.adoc
+https://github.com/masa1724/document/blob/master/Ruby/ruby-settings.adoc
 ----

@@ -1,4 +1,4 @@
-= MySQL(MariaDB) メモ
+= Samba設定
 :toc:
 :toc-title:
 :pagenums:
@@ -11,6 +11,8 @@
 :pygments-linenums-mode: inline
 :lang: ja
 
+
+=== インストール,基本設定
 [source,sh]
 ----
 # sambaインストール

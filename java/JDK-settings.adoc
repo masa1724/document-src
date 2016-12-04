@@ -2,7 +2,7 @@
 :toc:
 :toc-title:
 :pagenums:
-:sectnums:
+//:sectnums:
 //:imagesdir: img_MySQL/
 :icons: font
 :source-highlighter: pygments
@@ -10,6 +10,7 @@
 :pygments-linenums-mode: inline
 :lang: ja
 
+=== インストール
 [source,sh]
 ----
 
