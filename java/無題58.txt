@@ -1,0 +1,30 @@
+# MySQL‹N“®(ŠÇ—Ò‚Å‹N“®‚·‚é‚±‚Æ)
+net start mysql57
+
+mysql -u root -p
+(password:root)
+
+[MySQL]
+---------------------------------------------------------------------------------------------------------
+drop database sampledb;
+create database sampledb character set utf8;
+use sampledb;
+
+show databases;
+create table user (
+  system_user_id varchar(55),
+  user_id varchar(55),
+  password varchar(55),
+  bikou1 varchar(55),
+  bikou2 varchar(55),
+  bikou3 varchar(55),
+  bikou4 varchar(55),
+  bikou5 varchar(55),
+  bikou6 varchar(55),
+  bikou7 varchar(55),
+  primary key (system_user_id, user_id)
+);
+
+---------------------------------------------------------------------------------------------------------
+
+source C:\var\sample.txt

@@ -1,0 +1,92 @@
+
+' 最終行・最終列取得
+MaxRow = Cells(Rows.Count, 1).End(xlUp).Row
+MaxCol = Cells(1, Columns.Count).End(xlToLeft).Columns.Count).End
+
+' ファイル書込
+Private Sub ReadFile(ByVal filePath As String)
+    Dim fileNo As Integer
+    Dim line As String
+
+    fileNo = FreeFile()
+    Open filePath For Input As #fileNo
+
+    Do Until EOF(fileNo)
+      Line Input #fileNo, line
+      line = Trim(line)
+
+      ' 対象行じゃない場合、無視
+      If Not isSkip(line) Then
+        GoTo Continue
+      End If
+
+      Debug.Print line
+Continue:
+    Loop
+End Sub
+
+' ファイル書込
+Private Sub WriteFile(ByVal filePath As String)
+    Dim fileNo As Integer
+    Dim buffer As String
+
+    buffer = Now & vbNewLine
+    fileNo = FreeFile()
+
+    ' 上書き
+    Open filePath For Output As #fileNo
+
+    ' 追記
+    ' Open filePath For Append As #fileNo
+
+    Print #fileNo, buffer
+    Close #fileNo
+End Sub
+
+
+' UTF-8 BOM無でファイル出力 新規ファイル・上書き
+Private Sub WriteFileUTF8(ByVal filePath As String)
+    Dim fileNo As Integer
+    Dim buffer As String
+
+    buffer = Now & vbNewLine
+    With CreateObject("ADODB.Stream")
+        .Charset = "UTF-8"
+        .LineSeparator = adCRLF
+        .Open
+        .WriteText buffer
+        .Position = 0
+        .Type = adTypeBinary
+        .Position = 3
+        Dim buf As Variant: buf = .Read()
+        .Position = 0
+        .Write buf
+        .SetEOS
+        .SaveToFile filePath, adSaveCreateOverWrite
+        .Close
+    End With
+End Sub
+
+' ファイル書込(UTF8)　追記
+Private Sub WriteFileUTF8(ByVal filePath As String)
+    Dim fileNo As Integer
+    Dim buffer As String
+
+    buffer = Now & vbNewLine
+    With CreateObject("ADODB.Stream")
+        .Position = 0
+        .Type = adTypeBinary
+        .Position = 3
+        .Charset = "UTF-8"
+        .LineSeparator = adCRLF
+        .Open
+
+        'ファイルの内容を全て読込、ポジションをファイル末尾に移動させる
+        .LoadFromFile filePath
+        .Position = .Size
+
+        .WriteText buffer
+        .SaveToFile filePath, adSaveCreateOverWrite
+        .Close
+    End With
+End Sub

@@ -1,0 +1,173 @@
+= 第1回　統合開発環境のインストール ～Pleiades編～
+:toc:
+:toc-title: ---- 目次 ----
+:pagenums:
+:sectnums:
+:imagesdir: img/
+:icons: font
+:source-highlighter: pygments
+:pygments-style: xcode
+:pygments-linenums-mode: inline
+:lang: ja
+
+// pygments(Python入れないとダメ):  gem install pygments.rb
+// gem install coderay
+// $(dirname $(gem which pygments.rb))/../vendor/pygments-main/pygmentize -L styles
+//http://qiita.com/xmeta/items/de6ll67a8b8a0f982e123a
+// ユーザ定義変数
+:idename: Eclipse4.5(Mars)
+
+
+
+今回は、Webアプリ開発環境をインストールする手順について説明します。
+
+=== 概要
+---
+
+Java向けの統合開発環境にはEclipse、NetBeans、IntelliJ IDEAなどがありますが、なかでも[red]#デファクトスタンダード#となっているのがEclipseです。 +
+EclipseはもともとJava用の開発環境でしたが、現在はC言語やPHPなど他の言語にも対応しており6、さら に言語ごとに「JavaSE向け(基本的な開発用)」「JavaEE向け(Webアプリケーション開発用)」など、複数の パッケージに分かれています。 +
+Eclipseは日本語対応していませんが、有志により日本語化パックや日本語化済みEclipse(Pleiades)が公 開されています。
+
+=== インストール
+---
+
+Pleiadesのダウンロードページにアクセスし、複数バージョンの中からダウンロードしたいものを選びます。 +
+今回は、{idename}を選びます。　※最新のバージョンはバグが解決していないことがあるため、1つ前 のものを選んでいます。クラッシュするとか補完が利かないとか・・・。最新がいい人は4.6でも良いと思います。 +
+http://mergedoc.osdn.jp/
+
+image::cp1.jpg[align="left"]
+
+<<<
+
+各バージョンの中には、複数のパッケージがあります。今回はWebアプリを開発するので、JavaのFull Editionをダウンロードします。32bit/64bitは、各自のOSに合わせて選択してください。この例では64bit版 をダウンロードしました。
+
+image::cp2.jpg[align="left"]
+
+
+ダウンロードしたzipファイルは、Cドライブ直下などに解凍します。
+
+image::cp3.jpg[align="left"]
+
+
+eclipseフォルダを開き、eclipseを実行します。初回およびプラグイン追加時はeclipse.exe -clean.cmdから 実行、普段はeclipse.exeから実行します。今回は初回なので、eclipse.exe -clean.cmdを実行します。
+
+image::cp4.jpg[align="left"]
+
+
+=== 動作確認用プロジェクトの作成
+---
+
+eclipseが起動したら、さっそくプロジェクトを作成し、アプリの実行まで試してみましょう。 まずはメニューの「ファイル」⇒「新規」⇒「その他」を開きます。
+
+image::cp5.jpg[align="left"]
+
+「Web」ツリーの中から「動的Webプロジェクト」を選択し、次へ進みます。
+
+image::cp6.jpg[align="left"]
+
+
+--
+.TestServlet01.java
+[source,java,linenums]
+----
+include::src/TestServlet01.java[]
+----
+
+
+[source,ruby,numbered,highlight='6-7']
+----
+ORDERED_LIST_KEYWORDS = {
+  'loweralpha' => 'a',
+  'lowerroman' => 'i',
+  'upperalpha' => 'A',
+  'upperroman' => 'I'
+   #'lowergreek' => 'a'
+   #'arabic'     => '1'
+   #'decimal'    => '1'
+}
+----
+
+[source,groovy,linenums]
+----
+// File: User.groovy
+class User {
+    String username
+}
+----
+
+[source,bash,linenums]
+----
+# comment
+// sasasa
+$ komando
+$ komando2 args
+----
+
+[width="15%"]
+|=======
+|1 |2 |A
+|3 |4 |B
+|5 |6 |C
+|=======
+
+
+
+[width="50%",cols=">s,^m,e",frame="topbot",options="header"]
+|==========================
+|  dsa 2+|Columns 2 and 3
+|1       |Item 1  |Item 1
+|2       |Item 2  |Item 2
+|3       |Item 3  |Item 3
+|4       |Item 4  |Item 4
+|==========================
+
+
+
+[tree,file="tree-view.png"]
+--
+#src
+##main
+###java
+####com
+#####kodcu
+######App.java
+###resources
+####css
+#####style.css
+####js
+#####script.js
+####images
+#####image.png
+--
+
+
+----
+コード、ファイルリストなどのリスト
+----
+
+****
+サイドバーブロック
+****
+
+===================================
+Example Block
+===================================
+
+
+
+A multi-line comment.
+
+Notice it's a delimited block.
+
+
+
+
+
+
+.AAAAAAAAAAAA
+[width="100%",options="header,footer"]
+|====================
+| a | a | a
+| a | a | a
+| a | a | a
+|====================

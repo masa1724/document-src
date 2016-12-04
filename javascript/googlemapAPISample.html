@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8" />
+<script src="http://maps.google.com/maps/api/js?libraries=geometry&sensor=false"></script>
+</head>
+<body>
+<style>
+#google-map {
+    margin: 10px auto;
+    max-width: 640px;
+    height: 320px;
+    border: 1px solid gray;
+}
+</style>
+
+<div id="google-map">
+</div>
+
+<script>
+// ポイントA,Bの生成
+var pointA = new google.maps.LatLng(35.71008673036525, 139.81070961838535);
+var pointB = new google.maps.LatLng(35.65856488401862, 139.74554266815952);
+
+// GoogleMapの描画
+// mapTypeId： Mapの種類(地図、航空写真、地形などが選択可能)
+// center   ： 起動時のMapの中心(以下の場合だとポイントA,Bの中間)
+// zoom     ： 起動時のズーム比率
+// streetViewControl ： ストリートビューの可否を設定
+
+var mapElem = document.getElementById("google-map");
+
+var gMap = new google.maps.Map(mapElem, {
+    mapTypeId: google.maps.MapTypeId.ROADMAP,
+    center: new google.maps.LatLng( (pointA.lat()+pointB.lat())/2, (pointA.lng()+pointB.lng())/2 ),
+    zoom: 12,
+    streetViewControl: false,
+});
+
+// マーカーAの描画
+// icon      : 表示するアイコン
+// position  : アイコンの表示位置(google.maps.LatLngにて生成した値を指定)
+// map       : mapエレメント
+// draggable : マーカーの移動の可否 default/true
+
+var markerA =  new google.maps.Marker({
+    icon: "https://www.google.com/mapfiles/markerA.png",
+    // icon: "//www.google.com/mapfiles/markerA.png",
+    position: pointA,
+    map: gMap,
+});
+
+// マーカーBの描画
+var markerB =  new google.maps.Marker({
+    icon: "https://www.google.com/mapfiles/markerB.png",
+    // icon: "//www.google.com/mapfiles/markerB.png",
+    position: pointB,
+    map: gMap,
+    draggable: false
+});
+
+// ポリライン描画の配列
+var polylineArr = [
+	pointA, pointB
+];
+
+var line = new google.maps.Polyline({
+    strokeColor: "#FF0000",
+    strokeOpacity: 0.6,
+    strokeWeight: 3,
+    // geodesic: true, // 曲線をとる
+    map: gMap,
+    path: polylineArr,
+    draggable: false
+});
+
+</script>
+</body>
+</html>
+
+

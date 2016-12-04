@@ -1,0 +1,15 @@
+screen
+
+# スクリーンの状態
+screen -ls
+
+# 水平方向に画面分割
+Ctrl + a ->  S
+# 垂直
+Ctrl + a ->  l
+
+# 分割された画面へ移動
+Ctrl + a ->  tab
+
+# 何も無い画面へ端末を作成する
+Ctrl + a ->  c

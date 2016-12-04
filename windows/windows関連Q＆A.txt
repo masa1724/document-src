@@ -1,0 +1,12 @@
+Q. Windowsキーを押した際にキーワード入力をすればアプリ起動できるようにしたい
+A. ここにショートカットを置く
+  "C:\ProgramData\Microsoft\Windows\Start Menu\Programs"
+
+Q.スタートアップの置き場
+%USERPROFILE%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
+
+Q.Windows10 アップグレード無効化
+https://blogs.technet.microsoft.com/cs3_windows/w10cancel/
+
+Q.タスクマネージャーを1発起動
+A. Ctrl + shift + esc

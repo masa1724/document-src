@@ -1,0 +1,33 @@
+
+# フルパスでファイルを表示(1オプションで1行ずつ)
+$ ls -1d $GOOGLE_DRIVE/*
+/home/sgym2835/GoogleDrive/Lesson
+/home/sgym2835/GoogleDrive/account.xlsx
+/home/sgym2835/GoogleDrive/bin
+/home/sgym2835/GoogleDrive/doc
+/home/sgym2835/GoogleDrive/dotfiles
+/home/sgym2835/GoogleDrive/etc
+/home/sgym2835/GoogleDrive/src
+/home/sgym2835/GoogleDrive/tpl.adoc
+/home/sgym2835/GoogleDrive/work
+/home/sgym2835/GoogleDrive/www.zip
+
+
+dir_path="$1"
+
+# ファイルパスの一覧を取得(フルパス)
+file_list=$(ls -1d ${dir_path}/*)
+
+# フォルダが存在しない場合
+if [ $? != 0 ]; then
+  exit
+fi
+
+for file_path in ${file_list[@]};
+do
+  # スペース(全角,半角)をアンダーバーへ置換
+  # シングルクォートを除去
+  new_file_path=$(echo ${file_path} | sed 's/ /_/g' | sed 's/ /_/g' | sed 's/\'//g')
+  echo "rename to ${file_path}  =>  ${new_file_path}"
+  mv ${file_path} ${new_file_path}
+done

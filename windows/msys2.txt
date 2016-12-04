@@ -1,0 +1,45 @@
+# msys2 (i686:32bit, x86_64:64bit)
+https://sourceforge.net/projects/msys2/?source=typ_redirect
+
+# アップデート
+# -yを更に付加するとY/nの選択肢は全てYを選択させる
+pacman -Sy
+
+# アップグレード
+pacman -Su
+
+# ソフトウェア検索
+pacman -Ss ${package_name}
+
+# インストール済のソフトウェア検索
+# ↓にいくにつれて詳細情報表示
+pacman -Qs ${package_name}
+pacman -Qi ${package_name}
+pacman -Qii ${package_name}
+
+
+### パッケージ ###
+
+# レポジトリからインストール
+pacman -S ${package_name}
+# ローカルへダウンロード
+pacman -Sw ${package_name}
+# パッケージファイルからインストール(rpm -i みたいな感じ)
+pacman -U ${package_path}
+
+# 削除
+pacman -R ${package_name}
+# 依存するパッケージも同時に削除
+pacman -Rs ${package_name}
+# バックアップファイルも削除
+pacman -Rns ${package_name}
+
+
+# パッケージのキャッシュを削除
+pacman -Sc
+# 完全に削除
+pacman -Scc
+
+
+# 基本パッケージインストール
+pacman -S vim gcc git gcc-libs openssh

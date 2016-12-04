@@ -1,0 +1,10 @@
+ConEmuでgit-bashを設定する
+# git for Windows ダウンロード
+https://git-for-windows.github.io/
+※2行目 Use Git from the Windows Command Prompt を選択する
+
+# デフォルトシェルにGit bashを設定する
+Setting → StartUp → Tasks の
+・「Git bash」選択
+・Default task for new console にチェック
+・「Save settings」で保存

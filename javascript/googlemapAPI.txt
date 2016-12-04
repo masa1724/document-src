@@ -1,0 +1,48 @@
+参考：  http://jsdo.it/ksk1015/txhs
+
+
+<script src="http://maps.google.com/maps/api/js?libraries=geometry&sensor=false"></script>
+
+<div id="map"></div>
+
+
+
+# ポイントA,Bの生成
+var pointA = new google.maps.LatLng(35.71008673036525, 139.81070961838535);
+var pointB = new google.maps.LatLng(35.65856488401862, 139.74554266815952);
+
+# GoogleMapの描画
+mapTypeId： Mapの種類(地図、航空写真、地形などが選択可能)
+center   ： 起動時のMapの中心(以下の場合だとポイントA,Bの中間)
+zoom     ： 起動時のズーム比率
+streetViewControl ： ストリートビューの可否を設定
+
+var mapElem = document.getElementById("map");
+var gMap = new google.maps.Map(mapElem, {
+    mapTypeId: google.maps.MapTypeId.ROADMAP,
+    center: new google.maps.LatLng( (pointA.lat()+pointB.lat())/2, (pointA.lng()+pointB.lng())/2 ),
+    zoom: 12,
+    streetViewControl: false,
+});
+
+# マーカーAの描画
+icon      : 表示するアイコン
+position  : アイコンの表示位置(google.maps.LatLngにて生成した値を指定)
+map       : mapエレメント
+draggable : マーカーの移動の可否
+
+var markerA =  new google.maps.Marker({
+    icon: "//www.google.com/mapfiles/markerA.png",
+    position: pointA,
+    map: gMap,
+    draggable: true
+});
+
+# マーカーBの描画
+var markerB =  new google.maps.Marker({
+    icon: "//www.google.com/mapfiles/markerB.png",
+    position: pointB,
+    map: gMap,
+    draggable: true
+});
+

@@ -1,0 +1,60 @@
+【CSS3対応表】
+http://fmbip.com/litmus/
+
+【デバイスサイズ表】
+http://screensiz.es/phone
+
+
+@charset "utf-8";
+
+
+【CSSセレクタ指定】
+#selector
+.selector
+
+・要素で指定された属性を持つもの
+a[alt]   // aタグのalt属性を持つもの
+
+・要素の属性と値が一致するもの
+input[type='passoword']   // input要素のパスワード
+button[name="next"]　     // ボタン要素のname属性にnextが設定れされているもの
+
+・一つ後
+element + p
+・以降
+element ~ p
+
+・子要素
+ul > li
+・最初の子要素
+li:first-child
+・最後の子要素
+li:last-child
+・前からn番目の子要素
+li:nth-of-type(n)
+・後ろからn番目の子要素
+li:nth-last-of-type(n)
+
+・オンマウス時(IE6未対応)
+element:hover
+
+element:after
+
+・チェックされているもの
+element:checked
+
+// ウィンドウの幅
+@media (min-width:481px) {}
+@media (max-width:480px) {}
+
+// デバイスの幅
+@media (min-device-width:481px) {}
+@media (max-device-width:480px) {}
+
+※↑2つ何が違うの？
+ウィンドウ幅の場合、PCでもブラウザのウィンドウ幅を縮めればスマホ用のCSSが適用される
+逆にデバイスの幅だとウィンドウ幅を縮めても、元々のモニターサイズがdevice-widthになるので
+読み込むCSSは変わらない
+
+
+

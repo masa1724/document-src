@@ -1,0 +1,29 @@
+
+/*** 必須 ***/
+GoogleChrome
+GoogleDrive
+Google日本語入力
+WinRAR
+LibreOffice
+VLC Media player
+
+SakuraEditor
+Sublimetext3
+
+/*** 開発環境 ***/
+VisualStudio
+PhpStorm
+Eclipse
+Eclipse(日本語パッケージ)
+JDK
+php
+MySQLODBC
+Teraterm
+ConEmu
+Vagrant
+VirtualBox
+Git for Windows
+
+/*** その他 ***/
+Skype
+IPMsg

@@ -1,0 +1,2 @@
+Visual C++ 2015 ランタイムのインストール
+http://www.microsoft.com/ja-jp/download/details.aspx?id=48145

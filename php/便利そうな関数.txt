@@ -1,0 +1,3 @@
+・実行時点までに定義された定数の一覧
+get_defined_constants()
+

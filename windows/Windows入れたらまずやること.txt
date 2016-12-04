@@ -1,0 +1,23 @@
+﻿SublimeText3
+SakuraEditor
+Teraterm(collector付)
+VirtualBox
+Vagrant
+ConEmu
+GoogleDrive
+Google日本語入力
+LibreOffice
+WinRAR
+JDK
+
+phpstorm
+VLC media player
+
+・batファイル右クリック>編集時のエディタを変更
+regedit
+HKEY_CLASSES_ROOT > batfile > shell > edit > command
+
+変更前
+%SystemRoot%\System32\NOTEPAD.EXE %1
+変更後
+"C:\Program Files (x86)\sakura\sakura.exe" "%1"
