@@ -2,6 +2,10 @@
 
 #http://qiita.com/nimusukeroku/items/21860ebd6b4cb075181a
 
+# Atom
+https://atom.io/
+sudo rpm -ivh atom.x86_64.rpm
+
 sudo rm -rf $HOME/.atom
 sudo ln -s $HOME/dotfiles/.atom $HOME/.atom
 

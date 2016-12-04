@@ -1,0 +1,39 @@
+= JDK設定
+:toc:
+:toc-title:
+:pagenums:
+:sectnums:
+//:imagesdir: img_MySQL/
+:icons: font
+:source-highlighter: pygments
+:pygments-style: default
+:pygments-linenums-mode: inline
+:lang: ja
+
+[source,sh]
+----
+
+# Java(Korora はデフォルトでOpenJDK 1.8.0_91 が入ってる)
+$ JDK_URL="http://download.oracle.com/otn-pub/java/jdk/8u91-b14/jdk-8u91-linux-x64.rpm"
+
+# 同意情報をヘッダに付加し、ダウンロード
+$ sudo wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie" "${JDK_URL}"
+
+# インストール
+$ sudo dnf --nogpgcheck install jdk-8u91-linux-x64.rpm
+
+# javaの切替
+# ここではインストールしたjavaのバージョン:2を選択
+$ sudo alternatives --config java
+2 プログラムがあり 'java' を提供します。
+
+  選択       コマンド
+-----------------------------------------------
+*  1           java-1.8.0-openjdk.x86_64 (/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.111-3.b16.fc24.x86_64/jre/bin/java)
+ + 2           /usr/java/jdk1.8.0_91/jre/bin/java
+
+Enter を押して現在の選択 [+] を保持するか、選択番号を入力します:2
+
+# javaが切替わっていることを確認
+$ java -version
+----

@@ -12,8 +12,6 @@
 
 [source,sh]
 ----
-
-
 # インストール
 dnf install 〜
 # アンインストール
@@ -31,7 +29,6 @@ dnf info 〜
 # インストール済みパッケージに含まれるファイルの表示
 rpm -ql 〜
 
-
 sudo dnf update
 sudo dnf -y install ibus-mozc
 sudo dnf install xsel
@@ -42,7 +39,6 @@ LANG=C xdg-user-dirs-gtk-update
 
 # Chromeのflashインストール
 rpm -ivh https://sourceforge.net/projects/postinstaller/files/fedora/releases/24/x86_64/updates/chromium-pepper-flash-23.0.0.162-1.fc24.x86_64.rpm/download
-
 
 # リポジトリ有効化
 sudo dnf copr enable sergiomb/google-drive-ocamlfuse
@@ -55,74 +51,15 @@ google-drive-ocamlfuse ~/GoogleDrive
 
 ps -aux "*google*"
 
-# Java(Korora はデフォルトでOpenJDK 1.8.0_91 が入ってる)
-JDK_URL="http://download.oracle.com/otn-pub/java/jdk/8u91-b14/jdk-8u91-linux-x64.rpm"
-sudo wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie" "${JDK_URL}"
-sudo dnf --nogpgcheck install jdk-8u91-linux-x64.rpm
-sudo alternatives --config java
-java -version
+# JDK
+https://github.com/masa1724/document/blob/master/java/JDK_settings.adoc
 
 # Eclipse
 https://github.com/masa1724/document/blob/master/Eclipse/Eclipse.adoc
 
-# Git (Kororaはデフォルトでインストール済み v2.7.4）
-https://github.com/masa1724/document/blob/master/Git/git.adoc
-
+# git (Kororaはデフォルトでインストール済み v2.7.4）
+https://github.com/masa1724/document/blob/master/git/git.adoc
 
 # Ruby
-cd $HOME
-git clone git://github.com/sstephenson/rbenv.git .rbenv
-cat << EOS >> ${DOTFILES}/.bashrc
-export RBENV_ROOT="${HOME}/.rbenv"
-if [ -d "${RBENV_ROOT}" ]; then
-  export PATH="${RBENV_ROOT}/bin:${PATH}"
-  eval "$(rbenv init -)"
-fi
-EOS
-
-mkdir -p ~/.rbenv/plugins
-cd ~/.rbenv/plugins
-git clone git://github.com/sstephenson/ruby-build.git
-
-# 依存ライブラリをインストール
-sudo dnf -y install gcc
-sudo dnf -y install make
-sudo dnf -y install openssl
-sudo dnf -y install openssl-devel
-sudo dnf -y install gcc-c++
-sudo dnf install -y mysql-devel
-sudo dnf install -y readline-devel
-
-# install可能なruby
-rbenv install --list
-
-rbenv install 2.3.2
-
-# インストール済みのRubyのバージョンリスト表示
-rbenv versions
-
-# 現在のディレクトリで有効なRubyのバージョン表示
-rbenv version
-
-# Rubyバージョン切り替え(localだとディレクトリ固有)
-rbenv global 2.3.2
-rbenv version
-
-# rbenv refashを勝手にやってくれるやつ
-git clone https://github.com/sstephenson/rbenv-gem-rehash.git ~/.rbenv/plugins/rbenv-gem-rehash
-
-gem update
-gem install bundler
-bundle -v
-
-# rbenv最新化
-cd ~/.rbenv
-git pull
-cd ~/.rbenv/plugins/ruby-build
-git pull
-
-# Atom
-https://atom.io/
-sudo rpm -ivh atom.x86_64.rpm
-
+https://github.com/masa1724/document/blob/master/Ruby/Ruby.adoc
 ----

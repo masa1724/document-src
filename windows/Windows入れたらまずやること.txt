@@ -1,9 +1,7 @@
-﻿SublimeText3
+Atom
 SakuraEditor
-Teraterm(collector付)
 VirtualBox
 Vagrant
-ConEmu
 GoogleDrive
 Google日本語入力
 LibreOffice
