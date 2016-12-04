@@ -1,17 +1,13 @@
 
-### httpd ###
+### httpd
 sudo yum list httpd
 sudo yum -y install httpd
 
+# JDK
+https://github.com/masa1724/document/blob/master/java/JDK-settings.adoc
 
-### JDK ###
-```
-JDK_URL="http://download.oracle.com/otn-pub/java/jdk/8u91-b14/jdk-8u91-linux-x64.rpm"
-sudo wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie" "${JDK_URL}"
-sudo yum --nogpgcheck localinstall jdk-8u91-linux-x64.rpm
-sudo alternatives --config java
-java -version
-```
+# MySQL(MariaDB)
+https://github.com/masa1724/document/blob/master/MySQL/MySQL-settings.ado
 
 ### Tomcat ###
 ```
@@ -22,12 +18,6 @@ sudo wget ${TOMCAT_URL}
 sudo tar -xzvf ./apache-tomcat-${TOMCAT_VERSION}.tar.gz
 sudo mv ./apache-tomcat-${TOMCAT_VERSION} /opt/tomcat
 sudo mv ./apache-tomcat-${TOMCAT_VERSION}.tar.gz /usr/local/src/
-```
-
-
-### MariaDB ###
-```
-別DOC参照
 ```
 
 # tomcat用ユーザ作成
