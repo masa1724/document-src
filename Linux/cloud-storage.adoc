@@ -1,0 +1,72 @@
+= クラウドストレージ ツール
+:toc:
+:toc-title:
+:pagenums:
+//:sectnums:
+//:imagesdir: img_MySQL/
+:icons: font
+:source-highlighter: pygments
+:pygments-style: default
+:pygments-linenums-mode: inline
+:lang: ja
+
+
+=== google-drive-ocamlfuse
+windowsのGoogleDriveクライアントと同じ感じで
+常にファイル更新を監視し、クラウドと同期してくれる。
+ただ、監視続けているため、コンソール上での操作が遅くなる
+(主に同期先フォルダと同じフォルダ内)
+
+[source,sh]
+----
+# リポジトリ有効化
+sudo dnf copr enable sergiomb/google-drive-ocamlfuse
+# GoogleDriveインストール
+sudo dnf install google-drive-ocamlfuse
+# GoogleDrive用のディレクトリ作成
+mkdir ~/GoogleDrive
+# GoogleDrive起動(.bashrc等に書く)
+google-drive-ocamlfuse ~/GoogleDrive
+
+ps -aux "*google*"
+----
+
+=== rclone
+google-drive-ocamlfuseと異なり、監視はしない。
+好きなタイミングで同期等が行えるがコマンド打つのが多少めんどくさい。
+syncオプションを使えば変更したファイルのみ同期できるのが便利。
+
+[source,sh]
+----
+http://rclone.org/install/
+
+#ダウンロード
+curl -O http://downloads.rclone.org/rclone-current-linux-amd64.zip
+unzip rclone-current-linux-amd64.zip
+cd rclone-*-linux-amd64
+
+sudo cp rclone /usr/sbin/
+sudo chown root:root /usr/sbin/rclone
+sudo chmod 755 /usr/sbin/rclone
+
+rclone config
+http://rclone.org/docs/
+
+# rcloneの設定
+e/n/d/s/q> n
+name> GoogleDrive
+6
+Enterを入力
+
+# クラウド上に対するls
+rclone ls GoogleDrive:
+
+# 全ファイルのダウンロード
+rclone sync GoogleDrive: ~/GoogleDrive
+
+# アップロード
+rclone copy foobar.txt GoogleDrive:example_dir
+
+# 同期
+rclone sync ~/GoogleDrive GoogleDrive:
+----
