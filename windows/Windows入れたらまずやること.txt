@@ -1,16 +1,3 @@
-Atom
-SakuraEditor
-VirtualBox
-Vagrant
-GoogleDrive
-Google日本語入力
-LibreOffice
-WinRAR
-JDK
-
-phpstorm
-VLC media player
-
 ・batファイル右クリック>編集時のエディタを変更
 regedit
 HKEY_CLASSES_ROOT > batfile > shell > edit > command

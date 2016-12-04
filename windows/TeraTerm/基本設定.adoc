@@ -1,0 +1,94 @@
+= Teraterm設定
+:toc:
+:toc-title:
+:pagenums:
+//:sectnums:
+:imagesdir: img_MySQL/
+:icons: font
+:source-highlighter: pygments
+:pygments-style: default
+// $(dirname $(gem which pygments.rb))/../vendor/pygments-main/pygmentize -L styles
+:pygments-linenums-mode: inline
+:lang: ja
+
+設定ファイル
+C:\Program Files (x86)\teraterm\TERATERM.INI
+
+=== インストール
+---
+[source,sh]
+----
+# ログ等を開くエディタ
+ViewlogEditor=C:\Program Files\Sublime Text 3\subl.exe
+
+# 起動時の端末サイズ(x,y)
+TerminalSize=120,35
+
+# 右クリック貼付を1発でやる
+DisablePasteMouseRButton=off
+ConfirmPasteMouseRButton=off
+ConfirmChangePaste=off
+ConfirmChangePasteCR=off
+
+# 常に裏でログとっておく
+LogAutoStart=on
+LogHideDialog=on
+LogTimestamp=on
+LogDefaultName=teraterm_%Y%m%d%H%M%S.log
+LogDefaultPath=C:\var\log\teraterm
+
+# Teraterm起動時のホスト一覧を変えたい
+iniファイルの [Hosts] 配下の値を追加 or 削除(コメントアウト)する
+例)
+[Hosts]
+Host1=192.168.141.33
+Host2=192.168.33.10
+;Host4=192.0.2.1
+;Host5=[2001:db8:1:2:8401:2ff:fe03:405]
+;Host6=[fe80::8401:2ff:fe03:405%3]
+;Host7=myhost.example.com /F=myhost.ini
+;Host8=user@myhost.example.com:10022 /ssh
+;Host9=ssh://user@myhost.example.com
+;Host10=/C=1 ;serial port
+;Host11=\\.\pipe\vmware-serial-port ;Named pipe
+;Host12=/R=readme.txt ;replay a file
+----
+
+
+=== ログイン用ショートカット作りたい
+[source,sh]
+----
+
+# 右クリックからショートカット作成をし、リンク先に以下を設定する
+
+# パスワード認証
+"C:\Program Files (x86)\teraterm\ttermpro.exe" ${ip}:22 /auth=passwd /user=${user} /passwd=${passwd}
+
+# 鍵認証
+"C:\Program Files (x86)\teraterm\ttermpro.exe" ${ip}:${port} /auth=publickey /user=${user} /keyfile=%USERPROFILE%\.ssh\${key_file}
+----
+
+
+=== ログイン先別に読み込むiniファイルを変えたい
+[source,sh]
+----
+# 上記のログインショートカットに以下のFオプションを付加する
+
+# 開発用
+"C:\Program Files (x86)\teraterm\ttermpro.exe" /F="C:\Program Files (x86)\teraterm\TERATERM-dev.INI"
+
+# 本番用
+"C:\Program Files (x86)\teraterm\ttermpro.exe" /F="C:\Program Files (x86)\teraterm\TERATERM-pro.INI"
+----
+
+=== ショートカット
+[width="80%",cols="s,m",frame="topbot",options="header"]
+|==========================
+|コマンド|キー
+|コピー|Alt + C
+|貼付|Alt + V
+|貼付+改行|Alt + R
+|新規接続|Alt + N
+|セッション複製|Alt + D
+|ログアウト|Ctrl　+ D
+|==========================
