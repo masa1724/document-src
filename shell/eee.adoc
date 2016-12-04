@@ -63,33 +63,11 @@ sudo alternatives --config java
 java -version
 
 # Eclipse
-http://www.eclipse.org/downloads/eclipse-packages/
-cd /opt
-sudo tar xavf ~/Downloads/eclipse-*
-
-http://mergedoc.osdn.jp/#pleiades.html
-cd /opt/eclipse
-sudo unzip ~/Downloads/pleiades_*.zip
-echo '-Xverify:none' | sudo tee -a /opt/eclipse/eclipse.ini
-echo '-javaagent:/opt/eclipse/plugins/jp.sourceforge.mergedoc.pleiades/pleiades.jar' | sudo tee -a /opt/eclipse/eclipse.ini
-
-sudo ln -s /opt/eclipse/eclipse /usr/bin
+https://github.com/masa1724/document/blob/master/Eclipse/Eclipse.adoc
 
 # Git (Kororaはデフォルトでインストール済み v2.7.4）
-sudo dnf install -y git
+https://github.com/masa1724/document/blob/master/Git/git.adoc
 
-git config --global user.name "masayu1724"
-git config --global user.email "sgymuiaa1724@gmail.com"
-git config --global core.editor "/usr/bin/vim"
-git config --global color.ui true
-git config --global core.autoCRLF false
-git config --list
-
-# 上記設定を削除
-git config --global --unset color.ui
-
-# 特定のリポジトリのconfigのみ適用
-git config -l -f .git/config color.ui true
 
 # Ruby
 cd $HOME

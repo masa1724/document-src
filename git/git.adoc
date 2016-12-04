@@ -1,0 +1,67 @@
+= Git設定
+:toc:
+:toc-title:
+:pagenums:
+//:imagesdir: img_MySQL/
+:icons: font
+:source-highlighter: pygments
+:pygments-style: default
+:pygments-linenums-mode: inline
+:lang: ja
+
+=== インストール
+[source,sh]
+----
+# インストール
+sudo dnf install -y git
+
+# 設定情報を読込む
+source $MY_CONF
+
+git config --global user.name ${GIT['user.name']}
+git config --global user.email ${GIT['user.email']}
+git config --global core.editor "/usr/bin/vim"
+git config --global color.ui true
+
+# 自動改行変換 無効化
+git config --global core.autoCRLF false
+
+# 設定情報確認
+git config --list
+
+# 設定を削除
+# git config --global --unset color.ui
+# 特定のリポジトリへのみ設定
+# git config -l -f .git/config color.ui true
+----
+
+
+=== SSH設定
+[source,sh]
+----
+cd $HOME/.ssh
+
+# SSHキー生成
+sudo ssh-keygen -t rsa -f ${GIT['rsa_key_name']}
+
+# いったん権限を変える
+sudo chmod 777 ${GIT['rsa_key_name']}
+
+# SSHAgent起動
+eval "$(ssh-agent)"
+
+# SSHkキーを登録
+ssh-add ~/.ssh/${GIT['rsa_key_name']}
+
+# 所有者のみ読込、書込出来るようにする
+sudo chmod 600 ${GIT['rsa_key_name']}
+
+# 公開鍵の内容をクリップボードにコピー
+sudo cat "${GIT['rsa_key_name']}.pub" | xsel --clipboard --input
+
+# Settingの画面を開く
+# [New SSH Key]ボタンを押下
+# Title : 鍵を渡す
+# Key : コピペした内容
+google-chrome-stable --new-window https://github.com/settings/ssh
+----

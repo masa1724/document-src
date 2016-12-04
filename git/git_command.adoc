@@ -1,4 +1,17 @@
+= Gitコマンド
+:toc:
+:toc-title:
+:pagenums:
+//:imagesdir: img_MySQL/
+:icons: font
+:source-highlighter: pygments
+:pygments-style: default
+:pygments-linenums-mode: inline
+:lang: ja
 
+=== インストール
+[source,sh]
+----
 # ブランチ名
 branch_name="refact"
 
@@ -13,7 +26,7 @@ git branch
 
 # ブランチ切り替え
 git checkout ${branch_name}
- 
+
 # ブランチが切り替わっていることを確認
 git branch
 
@@ -23,9 +36,9 @@ git status
 # ブランチの修正内容をmasterへマージする
 git merge ${branch_name}
 
-
 # ブランチを削除
 git branch -d ${branch_name}
 
 # ブランチが削除されていることを確認
 git branch
+----

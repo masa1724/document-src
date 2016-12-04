@@ -1,8 +1,0 @@
-@echo off
-
-cd %USERPROFILE%\Downloads\
-
-: 日本語化パッケージダウンロード
-wget http://svn.osdn.jp/svnroot/mergedoc/trunk/Pleiades/build/pleiades.zip
-
-echo "-javaagent:plugins/jp.sourceforge.mergedoc.pleiades/pleiades.jar" >> %USERPROFILE%\eclipse\jee-neon\eclipse\eclipse.ini
