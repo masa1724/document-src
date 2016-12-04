@@ -1,6 +1,0 @@
-
-### サーバー追加 ###
-# tomcatのダウンロードし、解凍後、tomcatの名前にリネームし、c:\opt\配下に格納
-https://tomcat.apache.org/download-90.cgi
-
-ファイル→新規→その他→サーバー→tomcat9.0

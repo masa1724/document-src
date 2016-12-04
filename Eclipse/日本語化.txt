@@ -5,12 +5,4 @@ cd %USERPROFILE%\Downloads\
 : 日本語化パッケージダウンロード
 wget http://svn.osdn.jp/svnroot/mergedoc/trunk/Pleiades/build/pleiades.zip
 
-: 解凍
-rundll32.exe zipfldr.dll,RouteTheCall pleiades.zip 1
-: 
-%USERPROFILE%\eclipse\jee-neon\eclipse
-
-features
-plugins
-
 echo "-javaagent:plugins/jp.sourceforge.mergedoc.pleiades/pleiades.jar" >> %USERPROFILE%\eclipse\jee-neon\eclipse\eclipse.ini

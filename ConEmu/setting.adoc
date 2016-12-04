@@ -1,0 +1,19 @@
+= ConEmu設定
+//:toc:
+//:toc-title:
+//:pagenums:
+//:sectnums:
+:imagesdir: img_setting/
+:icons: font
+:source-highlighter: pygments
+:pygments-linenums-mode: inline
+:lang: ja
+
+=== デフォルトシェルにGit bashを設定する
+[source,sh]
+----
+Setting => StartUp => Tasks から
+・「Git bash」選択
+・Default task for new console にチェック
+・「Save settings」で保存
+----

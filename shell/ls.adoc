@@ -1,0 +1,56 @@
+= ls コマンド
+:toc:
+:toc-title:
+:pagenums:
+:sectnums:
+//:imagesdir: img_MySQL/
+:icons: font
+:source-highlighter: pygments
+:pygments-style: default
+:pygments-linenums-mode: inline
+:lang: ja
+
+---
+[source,sh]
+----
+# フルパスでファイルを表示(1オプションで1行ずつ)
+# -1 ファイルのみ名表示(1ファイルずつ改行して表示させる)
+# -d ディレクトリパスも表示する
+$ ls -1d $GOOGLE_DRIVE/*
+/home/user_name/GoogleDrive/account.xlsx
+/home/user_name/GoogleDrive/bin
+/home/user_name/GoogleDrive/doc
+/home/user_name/GoogleDrive/dotfiles
+/home/user_name/GoogleDrive/etc
+/home/user_name/GoogleDrive/src
+/home/user_name/GoogleDrive/work
+/home/user_name/GoogleDrive/www.zip
+----
+
+サンプルシェル
+[source,sh]
+----
+#!/bin/bash
+dir_path="$1"
+
+file_list=$(ls -1d ${dir_path})
+
+# フォルダが見つからない場合
+if [ $? != 0 ]; then
+  exit 1
+fi
+
+SAVE_IFS=${IFS}
+
+# ファイル名にスペースが入っていても改行されないようにする
+IFS=$'\n'
+
+for file_path in ${file_list[@]};
+do
+  hoge_command "${file_path}"
+done
+
+IFS=${SAVE_IFS}
+
+exit 0
+----

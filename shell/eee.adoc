@@ -1,4 +1,17 @@
-AAAAAAAAAAAAAAAAAAAAAAAA
+= screen コマンド
+:toc:
+:toc-title:
+:pagenums:
+:sectnums:
+//:imagesdir: img_MySQL/
+:icons: font
+:source-highlighter: pygments
+:pygments-style: default
+:pygments-linenums-mode: inline
+:lang: ja
+
+[source,sh]
+----
 
 
 # インストール
@@ -133,3 +146,5 @@ git pull
 # Atom
 https://atom.io/
 sudo rpm -ivh atom.x86_64.rpm
+
+----

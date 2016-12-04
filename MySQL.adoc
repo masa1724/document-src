@@ -3,7 +3,7 @@
 :toc-title:
 :pagenums:
 :sectnums:
-:imagesdir: img/
+:imagesdir: img_MySQL/
 :icons: font
 :source-highlighter: pygments
 :pygments-style: default
@@ -18,6 +18,8 @@
 ----
 # yumリポジトリファイル作成(https://mariadb.com/kb/ja/yum/)
 $ sudo vim /etc/yum.repos.d/MariaDB.repo
+----
+
 
 ------------------------------------------------------
 [mariadb]
@@ -43,6 +45,7 @@ sudo yum --enablerepo=mysql56-community install mysql-community-server
 sudo mv ./mysql-community-release-el7-5.noarch.rpm /usr/local/src/
 ----
 
+image::cp1.jpg[align="left"]
 
 === データベースの作成・変更・削除
 ---

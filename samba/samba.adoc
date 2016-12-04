@@ -1,3 +1,18 @@
+= MySQL(MariaDB) メモ
+:toc:
+:toc-title:
+:pagenums:
+:sectnums:
+:imagesdir: img_MySQL/
+:icons: font
+:source-highlighter: pygments
+:pygments-style: default
+// $(dirname $(gem which pygments.rb))/../vendor/pygments-main/pygmentize -L styles
+:pygments-linenums-mode: inline
+:lang: ja
+
+[source,sh]
+----
 # sambaインストール
 sudo dnf install samba
 
@@ -8,8 +23,12 @@ mkdir ~/share
 chown nobody:nobody ~/share
 
 # 設定ファイルの編集
+sudo cp -p /etc/samba/smb.conf{,.bk}
 sudo vim /etc/samba/smb.conf
+----
 
+./etc/samba/smb.conf
+[source,sh]
 ----
 [global]
         unix charset = UTF-8
@@ -67,11 +86,10 @@ create mode = 0777
 directory mode = 0777
 writable = yes
 public = yes
-
 ----
 
-sudo vim /usr/lib/systemd/system/smb.service
-
+[source,sh]
+----
 # sambaの起動
 systemctl start smb
 systemctl start nmb
@@ -79,9 +97,11 @@ systemctl start nmb
 # 自動起動設定
 systemctl enable smb
 systemctl enable nmb
+----
 
-
-### firewall設定 ###
+=== firewall設定
+[source,sh]
+----
 # firewallの起動確認
 firewall-cmd --state
 
@@ -97,9 +117,11 @@ firewall-cmd --permanent --add-service=samba
 
 # 更新確認
 firewall-cmd --list-services
+----
 
-
-### SELinuxの設定 ###
+=== SELinuxの設定
+[source,sh]
+----
 # SELinuxの起動確認
 getenforce
 
@@ -114,3 +136,7 @@ setsebool -P samba_enable_home_dirs 1
 
 # 更新後の確認(onになっていること)
 getsebool samba_enable_home_dirs
+----
+
+.serviceファイル
+/usr/lib/systemd/system/smb.service

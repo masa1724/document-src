@@ -1,0 +1,18 @@
+:toc:
+:toc-title:
+:pagenums:
+:sectnums:
+//:imagesdir: img_MySQL/
+:icons: font
+:source-highlighter: pygments
+:pygments-style: default
+// $(dirname $(gem which pygments.rb))/../vendor/pygments-main/pygmentize -L styles
+:pygments-linenums-mode: inline
+:lang: ja
+
+---
+[source,sh]
+----
+# MySQL‹N“®(ŠÇ—Ò‚Å‹N“®‚·‚é‚±‚Æ)
+net start mysql57
+----

@@ -1,0 +1,91 @@
+= ls コマンド
+:toc:
+:toc-title:
+:pagenums:
+:sectnums:
+//:imagesdir: img_MySQL/
+:icons: font
+:source-highlighter: pygments
+:pygments-style: default
+:pygments-linenums-mode: inline
+:lang: ja
+
+[source,sh]
+----
+Q. 複数行の文字列をファイルに追記(これでechoを並べなく済む)
+cat << EOS >> $HOME/.bashrc
+alias la="ls -a"
+alias ll="ls -l"
+alias ltr="ls -ltr"
+EOS
+
+Q. カレントディレクトリのls結果をフルパスにする
+・ディレクトリのみ抽出
+ls -1dF $PWD/* | grep */
+・ファイルのみ抽出
+ls -1dF $PWD/* | grep -v */
+
+
+Q.ls結果をparseする
+IFS=$'\n'
+
+# [tail -n +2] について： 先頭行に変な出力が出る為、それを捨てる
+ls_result=($(ls -l --time-style="long-iso" ${TARGET_DIR} | tail -n +2))
+for result in "${ls_results[@]}"; do
+
+  declare -A INFO
+  ls_info=( \
+    ["filetype"]=$(echo ${result} | awk '{print $1}' | cut -c 1) \
+    ["permission"]=$(echo ${result} | awk '{print $1}' | cut -c 2-10) \
+    ["dir_count"]=$(echo ${result} | awk '{print $2}') \
+    ["user"]=$(echo ${result} | awk '{print $3}') \
+    ["group"]=$(echo ${result} | awk '{print $4}') \
+    ["filesize"]=$(echo ${result} | awk '{print $5}') \
+    ["timestamp"]=$(echo ${result} | awk '{print $6,$7}') \
+    ["filename"]=$(echo ${result} | awk '{for(i=8;i<NF;i++){printf("%s",$i)}print $NF}')
+  )
+
+done
+
+# エラー標準出力捨てる
+${comamnd} 1>/dev/null 2>/dev/null
+
+############# よく使いそうなやつ
+# ディレクトリパスとファイル名連結(ディレクトリパスの末尾を気にしなくてよい)
+make_path() {[ $(echo "$1" | tail -c2) = "/" ] && echo "$1$2" || echo "$1/$2"
+}
+
+# 前後スペーストリム
+trim() { s=$(echo "$1" | sed 's/^ *//' | sed 's/ *$//')
+        s=$(echo "${s}" | sed 's/^　*//' | sed 's/　*$//') ; echo "${s}"
+}
+#############
+
+for item in ${ARRAY[@]}; do
+    echo $item
+done
+
+
+# ファイル内の文字列を置換し、上書きする
+sed -i -e "s/${before}/${after}/g" ${filename}
+
+
+# ダウンロード
+scp ~/.ssh/id_rsa.pub hoge_user@hogehoge.hoge.com:~/
+# アップロード
+scp ~/.ssh/id_rsa.pub hoge_user@hogehoge.hoge.com:~/.ssh/id_rsa.pub
+
+
+while IFS='' read -r p; do
+    print "%s\n" "$p"
+done < "$1"
+
+while true; do
+    read -p "Do you wish to install this program?" yn
+    case $yn in
+        [Yy]* ) make install; break;;
+        [Nn]* ) exit;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
+----
