@@ -3,7 +3,7 @@
 :toc-title:
 :pagenums:
 :sectnums:
-:imagesdir: ./
+:imagesdir: img_MySQL/
 :icons: font
 :source-highlighter: pygments
 :pygments-style: default
