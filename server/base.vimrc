@@ -17,7 +17,7 @@ set nowrap
 set textwidth=0
 set autoindent
 set tabstop=2
-set listchars=trail:-,extends:≫
+set listchars=trail:-,extends:?
 set shiftround
 set showcmd
 set laststatus=2
@@ -40,3 +40,14 @@ nnoremap j gj
 nnoremap k gk
 vnoremap h $v
 nnoremap gs :<C-u>%s///g<Left><Left><Left>
+
+
+alias la="ls -a"
+alias ll="ls -l"
+alias ltr="ls -ltr"
+alias v="vim"
+alias cdmaria="cd /etc/my.cnf.d"
+alias cdhttpd="cd /etc/httpd/conf/httpd.conf"
+alias cdphp="cd /etc/php.d"
+alias vihttpd="sudo vim /etc/httpd/con"
+alias viphp="sudo vim /etc/php.ini"

@@ -108,14 +108,29 @@ systemctl enable nmb
 firewall-cmd --state
 
 # sambaが利用可能なサービスに含まれているか
-firewall-cmd --get-services | grep "samba"
+firewall-cmd --get-services |
+ grep "samba"
 
 # sambaが有効か
 firewall-cmd --list-services
 
 # samba有効にする
 firewall-cmd --add-service=samba
-firewall-cmd --permanent --add-service=samba
+firewall-cmd --add-service=samba --permanent
+
+# ポートを開ける
+firewall-cmd --add-port=137/udp
+firewall-cmd --add-port=137/udp --permanent
+firewall-cmd --add-port=138/udp
+firewall-cmd --add-port=138/udp --permanent
+firewall-cmd --add-port=139/tcp
+firewall-cmd --add-port=139/tcp --permanent
+firewall-cmd --add-port=445/tcp
+firewall-cmd --add-port=445/tcp --permanent
+
+# 追加されている事を確認し、リロード
+firewall-cmd --list-ports
+firewall-cmd --reload
 
 # 更新確認
 firewall-cmd --list-services
