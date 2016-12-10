@@ -1,0 +1,17 @@
+@charset "utf-8";
+
+body{
+  font-family: Helvetica , "游ゴシック" , "Yu Gothic" , sans-serif;
+}
+
+
+/*** botton ********************************************/
+.btn1-style{
+  background-color: #333965;
+  color:white;
+}
+
+.btn1-style:hover{
+  background-color: #666C98;
+}
+

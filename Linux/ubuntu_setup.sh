@@ -18,6 +18,4 @@ sudo apt-get install -y git google-chrome-stable vim sublime-text-installer
 # delete packages
 sudo rm -R /usr/bin/firefox
 
-
 sudo apt-get update
-

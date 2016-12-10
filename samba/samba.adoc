@@ -108,8 +108,7 @@ systemctl enable nmb
 firewall-cmd --state
 
 # sambaが利用可能なサービスに含まれているか
-firewall-cmd --get-services |
- grep "samba"
+firewall-cmd --get-services | grep "samba"
 
 # sambaが有効か
 firewall-cmd --list-services

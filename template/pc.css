@@ -1,0 +1,86 @@
+@charset "utf-8";
+
+.wrapper{
+}
+
+/*** 1 ヘッダー  ************************************************************************/
+.header{
+  width:100%; height:100px;
+  background-color: #F6F8F8;
+  border:1px solid #EBEBEB;
+}
+
+/*** 3 フッター  ************************************************************************/
+.footer{
+  width:100%; height:100px;
+  background-color: #F6F8F8;
+  border:1px solid #EBEBEB;
+
+  clear: both;
+}
+
+
+/** 2 メイン  *************************************************************************/
+.main{
+  width:100%;
+  background-color: #EFEFEF;
+  text-align: center;
+}
+
+/** 2.1 メイン包含 **/
+.main-container{
+  display: inline-block;
+}
+
+/*** 2.1.1 コンテンツ ***/
+.content{
+  max-width:1000px;
+  background-color: #FCFCFC;
+  border:1px solid #EBEBEB;
+  float: left;
+}
+
+.content-title{
+  width:80%;
+  margin-bottom: 30px;
+  border:1px solid #EBEBEB;
+}
+
+.content-title-text{
+  font-size: 30px;
+}
+
+
+/*** 2.1.2 サイドメニュー ***************************************************************/
+.side-menu-container{
+  width:200px;
+  float: left;
+  margin-left:20px;
+
+  border:1px solid #84b2e0;
+  background-color: #CCCCCC;
+}
+
+.side-menu{
+  width:100%;
+  list-style-type:none;
+  background-color: #FFAAAF;
+
+  text-align: center;
+}
+
+.side-menu-item{
+  background-color: #FBFAF5;
+  padding:5px 10px;
+  border-bottom:1px solid #84b2e0;
+}
+
+.side-menu-item:hover {background-color: red;}
+.side-menu-item a {display: block;}
+
+
+
+.btn1-size{
+  width:140px; height:50px;
+  font: 20px;
+}

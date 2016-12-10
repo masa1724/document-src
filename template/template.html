@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="title" content="タイトル"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="description" content="ディスクリプション"/>
+  <meta name="keywords" content="キーワード"/>
+
+  <!-- Twitter、mixi等のSNSでシェアされた場合に使用 -->
+  <meta property="og:type" content="article"/>
+  <meta property="og:title" content="<meta name='title'>と同じ"/>
+  <meta property="og:description" content="<meta name='description'>と同じ"/>
+  <meta property="og:image" content="画像" />
+  <meta property="og:image:width" content="640" />
+  <meta property="og:image:height" content="468" />
+  <meta property="og:url" content="当ページのURL" />
+  <meta property="og:site_name" content="サイト名"/>
+
+  <!-- Common -->
+  <link rel="stylesheet" type="text/css" href="./reset.css" media="all"/>
+  <link rel="stylesheet" type="text/css" href="./common.css" media="all"/>
+  <!--PC-->
+  <link rel="stylesheet" type="text/css" href="./pc.css" media="screen and (min-device-width:481px)"/>
+  <!--スマホ-->
+  <link rel="stylesheet" type="text/css" href="./iphone.css" media="only screen and (max-device-width:480px)"/>
+
+  <script type="text/javascript" src="./script.js"></script>
+</head>
+<body>
+<div id="wrapper" class="wrapper">
+
+<header id="header" role="banner" class="header">
+  <h3>header!</h3>
+</header>
+
+<main id="main" role="main" class="main">
+  <div class="main-container">
+    <div class="content">
+
+      <div class="content-title">
+          <span class="content-title-text">【タイトル１】</span>
+      </div><!--.title-->
+
+      <div class="text">
+        {include_link}
+      </div>
+
+      <form method="POST" action="https://api.cybozulive.com/oauth/initiate">
+      <input type="text" name="x_auth_username" class = "" value="" placeholder=""><br>
+      <input type="text" name="x_auth_password" class = "" value="" placeholder=""><br>
+      <button type="submit" name="submit">Submit</button>
+      </form>
+      <button onclick="malert('aaa');" class="btn1-size btn1-style">alert</button>
+      <button onclick="scrollToTop(-50,10);" class="btn1-size btn1-style">TOP</button>
+    </div><!-- .main -->
+
+    <aside id="side-menu-container" class="side-menu-container" role="complementary">
+      <ul class="side-menu">
+      <li class="side-menu-item"><a href="https://www.youtube.com/watch?v=ZGoV_44xBbQ" class="" title="トップ">Item1</a></li>
+      <li class="side-menu-item"><a href="https://www.youtube.com/watch?v=ZGoV_44xBbQ" class="" title="トップ">Item2</a></li>
+      <li class="side-menu-item"><a href="https://www.youtube.com/watch?v=ZGoV_44xBbQ" class="" title="トップ">Item3</a></li>
+      <li class="side-menu-item"><a href="https://www.youtube.com/watch?v=ZGoV_44xBbQ" class="" title="トップ">Item4</a></li>
+      <li class="side-menu-item"><a href="https://www.youtube.com/watch?v=ZGoV_44xBbQ" class="" title="トップ">Item5</a></li>
+      </ul>
+      <div id="second-menu" class="second-menu">
+      </div><!--.second-menu-->
+    </aside><!--.side-menu-container-->
+  </div><!--.main-container-->
+</main>
+
+<footer id="footer" role="contentinfo" class="footer">
+  <h3>footer</h3>
+</footer>
+
+</div><!-- .wrapper -->
+</body>
+</html>
