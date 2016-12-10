@@ -35,6 +35,13 @@ git config --list
 # git config -l -f .git/config color.ui true
 ----
 
+=== HTTPS設定
+[source,sh]
+----
+git config --global credential.helper 'cache --timeout=3600'
+---
+
+=== ↓HTTPSのほうが楽だからもうやらん
 
 === SSH設定
 [source,sh]
@@ -42,22 +49,22 @@ git config --list
 cd $HOME/.ssh
 
 # SSHキー生成
-sudo ssh-keygen -t rsa -f ${GIT['rsa_key_name']}
+sudo ssh-keygen -t rsa -f "korora_git_rsa"
 
 # いったん権限を変える
-sudo chmod 777 ${GIT['rsa_key_name']}
+sudo chmod 777 "korora_git_rsa"
 
 # SSHAgent起動
 eval "$(ssh-agent)"
 
 # SSHkキーを登録
-ssh-add ~/.ssh/${GIT['rsa_key_name']}
+ssh-add "korora_git_rsa"
 
 # 所有者のみ読込、書込出来るようにする
-sudo chmod 600 ${GIT['rsa_key_name']}
+sudo chmod 600 "korora_git_rsa"
 
 # 公開鍵の内容をクリップボードにコピー
-sudo cat "${GIT['rsa_key_name']}.pub" | xsel --clipboard --input
+sudo cat "korora_git_rsa.pub" | xsel --clipboard --input
 
 # Settingの画面を開く
 # [New SSH Key]ボタンを押下
