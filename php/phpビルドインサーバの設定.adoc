@@ -1,27 +1,44 @@
+= phpビルドインサーバの設定
+:toc:
+:toc-title:
+:pagenums:
+:sectnums:
+//:imagesdir: img_MySQL/
+:icons: font
+:source-highlighter: pygments
+:pygments-style: default
+:pygments-linenums-mode: inline
+:lang: ja
+
+=== ビルドインサーバとは
+****
+<pre>
 phpに組み込まれている簡易サーバーみたいなやつ。
 .htaccessは使えない = ファイル拡張子をつけないとアクセスできない
 なので、URL補正をするため、php側でルーティングを行う必要がある。
+</pre>
+****
 
+=== ビルドインサーバー起動用スクリプト作成
+[source,sh]
+.server_init.sh
+----
+# WEBサイトのドキュメントルート
+documentRoot="/var/www/jsd"
 
-server_init.bat　サーバー起動
---------------------------------------------------------
-@echo off
-
-' WEBサイトのドキュメントルート
-documentRoot="C:\\var\\www\\jsd"
-
-' サーバーへのリクエスト時に介す処理を記述したphpファイル
+# サーバーへのリクエストをルーティングするphpファイル
 router="C:\\var\\www\\router.php"
 
 cd "%documentRoot%"
+
+# ビルドインサーバー起動
 php -S localhost:8000 "%router%"
+----
 
-exit
---------------------------------------------------------
-
-
-router.php ルーティング処理
---------------------------------------------------------
+=== ルーティング用のphpファイル作成
+.router.php
+[source,sh]
+----
 <?php
 // ブラウザに入力されたドメイン以降のURL取得
 // 例) localhost:8000/page_company
@@ -46,5 +63,4 @@ if(!preg_match("/\.php$/", $path)){
 
 return false;
 ?>
---------------------------------------------------------
-
+----

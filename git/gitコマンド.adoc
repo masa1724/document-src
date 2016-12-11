@@ -1,0 +1,43 @@
+= gitコマンド
+:toc:
+:toc-title:
+:pagenums:
+//:imagesdir: img_MySQL/
+:icons: font
+:source-highlighter: pygments
+:pygments-style: default
+:pygments-linenums-mode: inline
+:lang: ja
+
+[source,sh]
+----
+# ブランチ名
+branch_name="refact"
+
+# ブランチの一覧表示
+git branch
+
+# ブランチ作成
+git branch ${branch_name}
+
+# ブランチが作成されていることを確認
+git branch
+
+# ブランチ切り替え
+git checkout ${branch_name}
+
+# ブランチが切り替わっていることを確認
+git branch
+
+# ブランチの変更状態を確認
+git status
+
+# ブランチの修正内容をmasterへマージする
+git merge ${branch_name}
+
+# ブランチを削除
+git branch -d ${branch_name}
+
+# ブランチが削除されていることを確認
+git branch
+----

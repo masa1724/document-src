@@ -1,2 +1,2 @@
-bash のディレクトリ
+bash 縺ｮ繝�繧｣繝ｬ繧ｯ繝医Μ
 %USERPROFILE%\AppData\Local\lxss\home\%USERNAME%

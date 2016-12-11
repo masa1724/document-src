@@ -382,4 +382,3 @@ select name,
           else NULL
         end as '性別'
 from person;
-

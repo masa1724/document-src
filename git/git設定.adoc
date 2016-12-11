@@ -1,4 +1,4 @@
-= Git設定
+= git設定
 :toc:
 :toc-title:
 :pagenums:
@@ -12,19 +12,33 @@
 === インストール
 [source,sh]
 ----
+# バージョン確認
+sudo dnf search git
+
 # インストール
 sudo dnf install -y git
+----
 
-# 設定情報を読込む
-source $MY_CONF
-
+=== 基本設定
+[source,sh]
+----
+# ユーザ情報
 git config --global user.name ${GIT['user.name']}
 git config --global user.email ${GIT['user.email']}
+
+# コミット時のコメント入力等で使用するエディタ
 git config --global core.editor "/usr/bin/vim"
+
+# 標準出力の色付け
 git config --global color.ui true
 
 # 自動改行変換 無効化
 git config --global core.autoCRLF false
+
+# 認証情報のキャッシュ
+# 初回にHTTPSで認証を行った後、認証情報をキャッシュで保持する。
+# 以降、キャッシュが有効な間はパスワード入力不要。
+git config --global credential.helper 'cache --timeout=3600'
 
 # 設定情報確認
 git config --list
@@ -35,14 +49,7 @@ git config --list
 # git config -l -f .git/config color.ui true
 ----
 
-=== HTTPS設定
-[source,sh]
-----
-git config --global credential.helper 'cache --timeout=3600'
----
-
-=== ↓HTTPSのほうが楽だからもうやらん
-
+ ↓HTTPSのほうが楽だからもうやらん
 === SSH設定
 [source,sh]
 ----

@@ -1,4 +1,4 @@
-= MySQL(MariaDB) ƒƒ‚
+= MySQL(MariaDB) ãƒ¡ãƒ¢
 :toc:
 :toc-title:
 :pagenums:
@@ -10,7 +10,7 @@
 :pygments-linenums-mode: inline
 :lang: ja
 
-=== GoogleMap‚ÌƒCƒ“ƒNƒ‹[ƒh
+=== GoogleMapã®ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰
 ---
 [source,html]
 ----
@@ -19,19 +19,19 @@
 <div id="map"></div>
 ----
 
-=== 2“_ŠÔ‚ğü‚Å‚Â‚È‚®
+=== 2ç‚¹é–“ã‚’ç·šã§ã¤ãªã
 ---
 [source,javascript]
 ----
-// ƒ|ƒCƒ“ƒgA,B‚Ì¶¬
+// ãƒã‚¤ãƒ³ãƒˆA,Bã®ç”Ÿæˆ
 var pointA = new google.maps.LatLng(35.71008673036525, 139.81070961838535);
 var pointB = new google.maps.LatLng(35.65856488401862, 139.74554266815952);
 
-/* GoogleMap‚Ì•`‰æ
-mapTypeIdF Map‚Ìí—Ş(’n}Aq‹óÊ^A’nŒ`‚È‚Ç‚ª‘I‘ğ‰Â”\)
-center   F ‹N“®‚ÌMap‚Ì’†S(ˆÈ‰º‚Ìê‡‚¾‚Æƒ|ƒCƒ“ƒgA,B‚Ì’†ŠÔ)
-zoom     F ‹N“®‚ÌƒY[ƒ€”ä—¦
-streetViewControl F ƒXƒgƒŠ[ƒgƒrƒ…[‚Ì‰Â”Û‚ğİ’è
+/* GoogleMapã®æç”»
+mapTypeIdï¼š Mapã®ç¨®é¡(åœ°å›³ã€èˆªç©ºå†™çœŸã€åœ°å½¢ãªã©ãŒé¸æŠå¯èƒ½)
+center   ï¼š èµ·å‹•æ™‚ã®Mapã®ä¸­å¿ƒ(ä»¥ä¸‹ã®å ´åˆã ã¨ãƒã‚¤ãƒ³ãƒˆA,Bã®ä¸­é–“)
+zoom     ï¼š èµ·å‹•æ™‚ã®ã‚ºãƒ¼ãƒ æ¯”ç‡
+streetViewControl ï¼š ã‚¹ãƒˆãƒªãƒ¼ãƒˆãƒ“ãƒ¥ãƒ¼ã®å¯å¦ã‚’è¨­å®š
 */
 var mapElem = document.getElementById("map");
 var gMap = new google.maps.Map(mapElem, {
@@ -41,11 +41,11 @@ var gMap = new google.maps.Map(mapElem, {
     streetViewControl: false,
 });
 
-/* ƒ}[ƒJ[A‚Ì•`‰æ
-icon      : •\¦‚·‚éƒAƒCƒRƒ“
-position  : ƒAƒCƒRƒ“‚Ì•\¦ˆÊ’u(google.maps.LatLng‚É‚Ä¶¬‚µ‚½’l‚ğw’è)
-map       : mapƒGƒŒƒƒ“ƒg
-draggable : ƒ}[ƒJ[‚ÌˆÚ“®‚Ì‰Â”Û
+/* ãƒãƒ¼ã‚«ãƒ¼Aã®æç”»
+icon      : è¡¨ç¤ºã™ã‚‹ã‚¢ã‚¤ã‚³ãƒ³
+position  : ã‚¢ã‚¤ã‚³ãƒ³ã®è¡¨ç¤ºä½ç½®(google.maps.LatLngã«ã¦ç”Ÿæˆã—ãŸå€¤ã‚’æŒ‡å®š)
+map       : mapã‚¨ãƒ¬ãƒ¡ãƒ³ãƒˆ
+draggable : ãƒãƒ¼ã‚«ãƒ¼ã®ç§»å‹•ã®å¯å¦
 */
 var markerA =  new google.maps.Marker({
     icon: "//www.google.com/mapfiles/markerA.png",
@@ -54,7 +54,7 @@ var markerA =  new google.maps.Marker({
     draggable: true
 });
 
-// ƒ}[ƒJ[B‚Ì•`‰æ
+// ãƒãƒ¼ã‚«ãƒ¼Bã®æç”»
 var markerB =  new google.maps.Marker({
     icon: "//www.google.com/mapfiles/markerB.png",
     position: pointB,
@@ -63,4 +63,4 @@ var markerB =  new google.maps.Marker({
 });
 ----
 
-QlF  http://jsdo.it/ksk1015/txhs
+å‚è€ƒï¼š  http://jsdo.it/ksk1015/txhs

@@ -1,0 +1,14 @@
+= webサーバー構築(Java)
+:toc:
+:toc-title:
+:pagenums:
+:sectnums:
+//:imagesdir: img_MySQL/
+:icons: font
+:source-highlighter: pygments
+:pygments-style: default
+:pygments-linenums-mode: inline
+:lang: ja
+
+・実行時点までに定義された定数の一覧
+get_defined_constants();

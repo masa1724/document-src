@@ -79,6 +79,27 @@
 .side-menu-item a {display: block;}
 
 
+.link-list{
+  text-align:left;
+
+  margin-top: 5px;
+  margin-bottom: 5px;
+  list-style-type:none;
+}
+.link-list li {
+    background-color: #FBFAF5;
+    padding:5px 10px;
+    border-bottom:1px solid #84b2e0;
+}
+.link-list li:hover {background-color: red;}
+.link-list a {display: block;}
+
+pre {
+  text-align:left;
+  style="background-color: #F4F4F4;
+  padding 10px;
+  width:100%;
+}
 
 .btn1-size{
   width:140px; height:50px;

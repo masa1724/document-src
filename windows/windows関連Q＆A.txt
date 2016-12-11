@@ -1,12 +1,12 @@
-Q. WindowsƒL[‚ð‰Ÿ‚µ‚½Û‚ÉƒL[ƒ[ƒh“ü—Í‚ð‚·‚ê‚ÎƒAƒvƒŠ‹N“®‚Å‚«‚é‚æ‚¤‚É‚µ‚½‚¢
-A. ‚±‚±‚ÉƒVƒ‡[ƒgƒJƒbƒg‚ð’u‚­
+Q. Windowsã‚­ãƒ¼ã‚’æŠ¼ã—ãŸéš›ã«ã‚­ãƒ¼ãƒ¯ãƒ¼ãƒ‰å…¥åŠ›ã‚’ã™ã‚Œã°ã‚¢ãƒ—ãƒªèµ·å‹•ã§ãã‚‹ã‚ˆã†ã«ã—ãŸã„
+A. ã“ã“ã«ã‚·ãƒ§ãƒ¼ãƒˆã‚«ãƒƒãƒˆã‚’ç½®ã
   "C:\ProgramData\Microsoft\Windows\Start Menu\Programs"
 
-Q.ƒXƒ^[ƒgƒAƒbƒv‚Ì’u‚«ê
+Q.ã‚¹ã‚¿ãƒ¼ãƒˆã‚¢ãƒƒãƒ—ã®ç½®ãå ´
 %USERPROFILE%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
 
-Q.Windows10 ƒAƒbƒvƒOƒŒ[ƒh–³Œø‰»
+Q.Windows10 ã‚¢ãƒƒãƒ—ã‚°ãƒ¬ãƒ¼ãƒ‰ç„¡åŠ¹åŒ–
 https://blogs.technet.microsoft.com/cs3_windows/w10cancel/
 
-Q.ƒ^ƒXƒNƒ}ƒl[ƒWƒƒ[‚ð1”­‹N“®
+Q.ã‚¿ã‚¹ã‚¯ãƒžãƒãƒ¼ã‚¸ãƒ£ãƒ¼ã‚’1ç™ºèµ·å‹•
 A. Ctrl + shift + esc

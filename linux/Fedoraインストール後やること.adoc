@@ -1,4 +1,4 @@
-= Linux インストール時にやること
+= Fedoraインストール後やること
 :toc:
 :toc-title:
 :pagenums:

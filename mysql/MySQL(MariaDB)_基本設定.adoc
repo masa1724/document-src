@@ -1,4 +1,4 @@
-= MySQL(MariaDB) メモ
+= MySQL(MariaDB) 基本設定
 :toc:
 :toc-title:
 :pagenums:

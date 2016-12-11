@@ -70,7 +70,7 @@ image::cp6.jpg[align="left"]
 .TestServlet01.java
 [source,java,linenums]
 ----
-include::src/TestServlet01.java[]
+/// include::src/TestServlet01.java[]
 ----
 
 
