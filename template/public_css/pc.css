@@ -1,24 +1,29 @@
 @charset "utf-8";
 
 .wrapper{
+  font-family:"Noto Serif","DejaVu Serif",serif;
 }
 
 /*** 1 ヘッダー  ************************************************************************/
 .header{
-  width:100%; height:100px;
+  width:100%; height:50px;
   background-color: #F6F8F8;
   border:1px solid #EBEBEB;
 }
 
 /*** 3 フッター  ************************************************************************/
 .footer{
-  width:100%; height:100px;
-  background-color: #F6F8F8;
+  width:100%; height:60px;
+  background-color: rgba(0,0,0,.8);
   border:1px solid #EBEBEB;
-
+  color:rgba(255,255,255,.8);
+  line-height:1.44;
   clear: both;
 }
 
+.last-update-time{
+  display:block;
+}
 
 /** 2 メイン  *************************************************************************/
 .main{
@@ -29,29 +34,76 @@
 
 /** 2.1 メイン包含 **/
 .main-container{
+  width:70%;
   display: inline-block;
 }
 
 /*** 2.1.1 コンテンツ ***/
 .content{
-  max-width:1000px;
+  width:100%;
   background-color: #FCFCFC;
   border:1px solid #EBEBEB;
   float: left;
 }
 
-.content-title{
+.current-path{
   width:80%;
-  margin-bottom: 30px;
-  border:1px solid #EBEBEB;
+  margin-bottom: 20px;
+  border:2px solid #F1F1F1;
+  box-shadow: inset 4px 4px 4px #999;
 }
 
-.content-title-text{
+.current-path-text {
   font-size: 30px;
+  padding: 15px 0;
+}
+
+/*** .link-list **************************************************************/
+.link-list{
+  text-align:left;
+
+  margin-top: 5px;
+  margin-bottom: 5px;
+  list-style-type:none;
+  box-shadow: 1px 2px 3px #ccc;
+
+  border-radius: 5px;        /* CSS3草案 */
+  -webkit-border-radius: 5px;    /* Safari,Google Chrome用 */
+  -moz-border-radius: 5px;   /* Firefox用 */
+}
+
+.link-list li {
+    background-color: #FBFAF5;
+    border-bottom:1px solid #84b2e0;
+    border-radius: 5px;        /* CSS3草案 */
+    -webkit-border-radius: 5px;    /* Safari,Google Chrome用 */
+    -moz-border-radius: 5px;   /* Firefox用 */
+}
+
+.link-list li:hover {
+    box-shadow: 5px 6px 7px #ccc;
+    background-color:#FDF8EF;
+    padding:4px 11px;
+}
+
+.link-list a {
+  display: block;
+  padding:5px 10px;
 }
 
 
-/*** 2.1.2 サイドメニュー ***************************************************************/
+
+
+pre {
+  text-align:left;
+  style="background-color: #F4F4F4;
+  padding 10px;
+  width:100%;
+  box-shadow: 1px 2px 3px #ccc;
+}
+
+
+/*** 2.1.2 サイドメニュー **************************************************************
 .side-menu-container{
   width:200px;
   float: left;
@@ -77,29 +129,7 @@
 
 .side-menu-item:hover {background-color: red;}
 .side-menu-item a {display: block;}
-
-
-.link-list{
-  text-align:left;
-
-  margin-top: 5px;
-  margin-bottom: 5px;
-  list-style-type:none;
-}
-.link-list li {
-    background-color: #FBFAF5;
-    padding:5px 10px;
-    border-bottom:1px solid #84b2e0;
-}
-.link-list li:hover {background-color: red;}
-.link-list a {display: block;}
-
-pre {
-  text-align:left;
-  style="background-color: #F4F4F4;
-  padding 10px;
-  width:100%;
-}
+*/
 
 .btn1-size{
   width:140px; height:50px;

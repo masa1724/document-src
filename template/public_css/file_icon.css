@@ -1,0 +1,13 @@
+@charset "utf-8";
+
+.file-icon {
+	display: inline-block;
+	padding-left: 25px;
+	background: url(https://masa1724.github.io/document/public_img/file.ico) no-repeat right center;
+}
+
+.folder-icon {
+	display: inline-block;
+	padding-left: 25px;
+	background: url(https://masa1724.github.io/document/public_img/folder.png) no-repeat right center;
+}

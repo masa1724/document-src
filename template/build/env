@@ -1,0 +1,22 @@
+# ホームページのURL
+MY_HP_URL="https://masa1724.github.io/document/"
+
+# srcディレクトリ(サイトの元ネタ)
+SRC_DIR="$HOME/document-src/"
+
+# 出力先(サイト用のリポジトリ)
+DIST_DIR="$HOME/document/"
+
+# テンプレートフォルダ
+TEMPLATE_DIR="${SRC_DIR}template/"
+
+# 最上位のindex.htmlに使用
+TEMPLATE_HTML="${TEMPLATE_DIR}index.html"
+
+# adoc以外のファイルに使用する雛形
+TEMPLATE_HTML2="${TEMPLATE_DIR}index2.html"
+
+# adocにインクルードする戻るボタン用js
+BACK_BTN_JS_INCLUDE="<script src='""${MY_HP_URL}""public_js/asciidoc/back_btn.js'></script>"
+
+BUILD_WEB_SITE_TIME=$(date +"%Y-%m-%d %I:%M:%S")

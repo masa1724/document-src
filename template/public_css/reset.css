@@ -76,3 +76,30 @@ video {
   background: transparent;
   vertical-align: baseline;
 }
+
+
+
+ a {
+  color:#2700D0;
+  text-decoration: none;
+}
+
+ a:link {
+  color:#2700D0;
+  text-decoration: none;
+}
+
+a:visited {
+  color:#2700D0;
+  text-decoration: none;
+}
+
+ a:hover {
+   color:red;
+  text-decoration:underline;
+}
+
+ a:active {
+  color:red;
+  text-decoration:underline;
+}
