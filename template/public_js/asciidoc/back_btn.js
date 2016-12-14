@@ -1,10 +1,10 @@
-window.onload = function() {
+function createBackButton() {
   var btnElem = document.createElement('button');
   btnElem.type="button";
   btnElem.innerHTML="戻る";
   btnElem.style.position="fixed";
-  btnElem.style.width=60;
-  btnElem.style.height=40;
+  btnElem.style.width=70;
+  btnElem.style.height=50;
   btnElem.style.backgroundColor="#666C98";
   btnElem.style.color="white";
 
@@ -13,5 +13,9 @@ window.onload = function() {
   var func = new Function("location.href='" + toUrl + "';");
   btnElem.onclick = func;
 
-  document.body.appendChild(btnElem);
-};
+  document.body.insertBefore(btnElem, document.body.firstChild);
+}
+
+window.onload = function() {
+  createBackButton();
+}

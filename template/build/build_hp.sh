@@ -136,10 +136,11 @@ do
 
     # ファイル内容を置換
     sed -i -e "${c_inum}i ${c_html_src}" ${category_root_index_html}
-    sed -i -e "s/%title/"${re_file_name}"/g" "${category_root_index_html}"
-    sed -i -e "s/%last_update_time/""${BUILD_WEB_SITE_TIME}""/g" "${category_root_index_html}"
-    sed -i -e "s|%current-path|""$(make_folder_path_atag ${dir_name})""|g" "${category_root_index_html}"
   done
+
+  sed -i -e "s/%title/"${dir_name}"/g" "${category_root_index_html}"
+  sed -i -e "s/%last_update_time/""${BUILD_WEB_SITE_TIME}""/g" "${category_root_index_html}"
+  sed -i -e "s|%current-path|""$(make_folder_path_atag ${dir_name})""|g" "${category_root_index_html}"
 
   IFS=$SAVE_IFS
 done

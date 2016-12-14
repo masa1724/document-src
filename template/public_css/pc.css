@@ -83,15 +83,16 @@
 .link-list li:hover {
     box-shadow: 5px 6px 7px #ccc;
     background-color:#FDF8EF;
-    padding:4px 11px;
+}
+
+.link-list a:hover {
+    padding: 8px 4px 6px 6px;
 }
 
 .link-list a {
   display: block;
-  padding:5px 10px;
+  padding: 7px 5px 7px 5px;
 }
-
-
 
 
 pre {
