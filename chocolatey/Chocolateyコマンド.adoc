@@ -1,4 +1,17 @@
+= Chocolateyコマンド
+//:toc:
+//:toc-title:
+//:pagenums:
+//:sectnums:
+:imagesdir: img_setting/
+:icons: font
+:source-highlighter: pygments
+:pygments-linenums-mode: inline
+:lang: ja
 
+=== コマンド
+[source,sh]
+----
 : 公式HP
 https://chocolatey.org/packages
 
@@ -13,3 +26,4 @@ cup all
 
 : インストール済のpackageを表示
 chocolatey list
+----

@@ -1,13 +1,31 @@
+= サーバー構築基本設定(Centos7)
+:toc:
+:toc-title:
+:pagenums:
+:sectnums:
+//:imagesdir: img_MySQL/
+:icons: font
+:source-highlighter: pygments
+:pygments-style: default
+:pygments-linenums-mode: inline
+:lang: ja
+
+== SSH用ユーザ作成
+=== インストール
+[source,sh]
+----
+
 # ユーザー作成
 adduser sgym2835vps
 passwd sgym2835vps
 usermod -G wheel sgym2835vps
 
+# wheelグループの使用
 visudo
-----------------------------------
+#---------------------------------------------------
 # コメントアウト解除
 %wheel ALL=(ALL) ALL
-----------------------------------
+#---------------------------------------------------
 
 # 秘密鍵コピー
 cp -r /root/.ssh /home/sgym2835vps/
@@ -16,7 +34,7 @@ chown sgym2835vps /home/sgym2835vps/.ssh/authorized_keys
 
 # ssh基本設定
 vim /etc/ssh/sshd_config
-----------------------------------
+#---------------------------------------------------
 # パスワード認証禁止
 PasswordAuthentication no
 # チャレンジレスポンス認証禁止
@@ -41,13 +59,12 @@ AllowUsers hogeuser git
 
 # プロトコル2にする
 Protocol 2
-----------------------------------
+#---------------------------------------------------
 systemctl restart sshd
 
 # firewallのport開ける
 firewall-cmd --permanent --add-port=10613/tcp
 firewall-cmd --reload
-
 
 # 日本環境設定
 localectl set-locale LANG=ja_JP.UTF-8
@@ -59,3 +76,4 @@ timedatectl
 
 sudo yum -y update
 sudo yum -y upgrade
+----
