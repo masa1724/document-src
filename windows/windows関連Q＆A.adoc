@@ -1,3 +1,17 @@
+= windows関連Q＆A
+:toc:
+:toc-title:
+:pagenums:
+:sectnums:
+//:imagesdir: img_MySQL/
+:icons: font
+:source-highlighter: pygments
+:pygments-style: default
+:pygments-linenums-mode: inline
+:lang: ja
+
+[source,sh]
+----
 Q. Windowsキーを押した際にキーワード入力をすればアプリ起動できるようにしたい
 A. ここにショートカットを置く
   "C:\ProgramData\Microsoft\Windows\Start Menu\Programs"
@@ -10,3 +24,4 @@ https://blogs.technet.microsoft.com/cs3_windows/w10cancel/
 
 Q.タスクマネージャーを1発起動
 A. Ctrl + shift + esc
+----

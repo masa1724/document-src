@@ -1,3 +1,17 @@
+= SQLメモ
+:toc:
+:toc-title:
+:pagenums:
+:sectnums:
+//:imagesdir: img_MySQL/
+:icons: font
+:source-highlighter: pygments
+:pygments-style: default
+:pygments-linenums-mode: inline
+:lang: ja
+
+[source,sql]
+----
 Insert時、空の項目が含まれる場合は、カラム名をすべて指定する
 int型に空を設定する場合は、NULLを指定する
 
@@ -382,3 +396,4 @@ select name,
           else NULL
         end as '性別'
 from person;
+----

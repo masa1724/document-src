@@ -1,12 +1,29 @@
-【CSS3対応表】
+= CSSメモ
+//:toc:
+//:toc-title:
+//:pagenums:
+//:sectnums:
+:imagesdir: img_setting/
+:icons: font
+:source-highlighter: pygments
+:pygments-linenums-mode: inline
+:lang: ja
+
+=== URL
+[source,sh]
+----
+# CSS3対応表
 http://fmbip.com/litmus/
 
-【デバイスサイズ表】
+# デバイスサイズ表
 http://screensiz.es/phone
+----
 
 
+=== URL
+[source,css]
+----
 @charset "utf-8";
-
 
 【CSSセレクタ指定】
 #selector
@@ -56,5 +73,4 @@ element:checked
 逆にデバイスの幅だとウィンドウ幅を縮めても、元々のモニターサイズがdevice-widthになるので
 読み込むCSSは変わらない
 
-
-
+----

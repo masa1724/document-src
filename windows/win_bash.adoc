@@ -1,0 +1,17 @@
+= WinBash
+:toc:
+:toc-title:
+:pagenums:
+:sectnums:
+//:imagesdir: img_MySQL/
+:icons: font
+:source-highlighter: pygments
+:pygments-style: default
+:pygments-linenums-mode: inline
+:lang: ja
+
+[source,bat]
+----
+rem bash のディレクトリ
+%USERPROFILE%\AppData\Local\lxss\home\%USERNAME%
+----

@@ -1,0 +1,16 @@
+= MinGWインストール
+//:toc:
+//:toc-title:
+//:pagenums:
+//:sectnums:
+:imagesdir: img_setting/
+:icons: font
+:source-highlighter: pygments
+:pygments-linenums-mode: inline
+:lang: ja
+
+=== MinGW ダウンロード
+[source,sh]
+----
+https://sourceforge.net/projects/mingw/files/
+----

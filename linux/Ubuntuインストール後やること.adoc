@@ -1,4 +1,17 @@
-#!/bin/bash
+= Ubuntuインストール後やること
+:toc:
+:toc-title:
+:pagenums:
+:sectnums:
+//:imagesdir: img_MySQL/
+:icons: font
+:source-highlighter: pygments
+:pygments-style: default
+:pygments-linenums-mode: inline
+:lang: ja
+
+[source,sh]
+----
 
 sudo apt-get update
 sudo apt-get upgrade
@@ -19,3 +32,4 @@ sudo apt-get install -y git google-chrome-stable vim sublime-text-installer
 sudo rm -R /usr/bin/firefox
 
 sudo apt-get update
+----

@@ -1,3 +1,18 @@
+= コマンドメモ
+:toc:
+:toc-title:
+:pagenums:
+:sectnums:
+//:imagesdir: img_MySQL/
+:icons: font
+:source-highlighter: pygments
+:pygments-style: default
+:pygments-linenums-mode: inline
+:lang: ja
+
+[source,bat]
+----
+
 : diskpart起動
 diskpart
 
@@ -34,3 +49,4 @@ list volume
 select disk x
 select partition x
 delete partition override
+----

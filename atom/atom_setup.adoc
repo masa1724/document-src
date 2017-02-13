@@ -1,7 +1,17 @@
-#!/bin/bash
+= Atom基本設定
+//:toc:
+//:toc-title:
+//:pagenums:
+//:sectnums:
+:imagesdir: img_setting/
+:icons: font
+:source-highlighter: pygments
+:pygments-linenums-mode: inline
+:lang: ja
 
-#http://qiita.com/nimusukeroku/items/21860ebd6b4cb075181a
-
+=== よくインストールするパッケージ
+[source,sh]
+----
 # Atom
 https://atom.io/
 sudo rpm -ivh atom.x86_64.rpm
@@ -67,4 +77,17 @@ pear install PHP_CodeSniffer
 sudo apt-get install -y shellcheck
 
 sudo apm update
+----
+
+=== apmコマンド
+[source,sh]
+----
+# インストール済みパッケージの表示
 apm list
+
+# インストール済みパッケージ情報のエクスポート
+apm list --installed --bare > packages.txt
+
+# パッケージ情報からインストール
+apm install --packages-file packages.txt
+----

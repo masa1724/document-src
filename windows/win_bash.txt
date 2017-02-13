@@ -1,2 +1,0 @@
-bash のディレクトリ
-%USERPROFILE%\AppData\Local\lxss\home\%USERNAME%

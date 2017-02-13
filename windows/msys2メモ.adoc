@@ -1,3 +1,18 @@
+msys2メモ
+= コマンドメモ
+:toc:
+:toc-title:
+:pagenums:
+:sectnums:
+//:imagesdir: img_MySQL/
+:icons: font
+:source-highlighter: pygments
+:pygments-style: default
+:pygments-linenums-mode: inline
+:lang: ja
+
+[source,sh]
+----
 # msys2 (i686:32bit, x86_64:64bit)
 https://sourceforge.net/projects/msys2/?source=typ_redirect
 
@@ -43,3 +58,4 @@ pacman -Scc
 
 # 基本パッケージインストール
 pacman -S vim gcc git gcc-libs openssh
+----

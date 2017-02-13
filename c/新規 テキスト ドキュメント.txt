@@ -1,3 +1,0 @@
-# MinGW ダウンロード
-https://sourceforge.net/projects/mingw/files/
-
